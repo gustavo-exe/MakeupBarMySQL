@@ -26,3 +26,15 @@ CREATE TABLE Persona.Cliente
     PRIMARY KEY (IdCliente)
 )ENGINE = InnoDB;
 
+CREATE SCHEMA Servicio;
+
+CREATE TABLE Servicio.Compra
+(
+	IdCompra INT NOT NULL AUTO_INCREMENT,
+    IDProveedor INT NOT NULL,
+    NombreDelProducto NVARCHAR(50) NOT NULL,
+    Cantidad INT NOT NULL,
+    Costo FLOAT NOT NULL,
+    Descripcion NVARCHAR(100) NOT NULL,
+    PRIMARY KEY (IdCompra)
+)ENGINE = InnoDB;
