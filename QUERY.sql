@@ -1,5 +1,7 @@
 USE MAKEUPBAR;
-
+-- --- - - - - - 
+-- T A B L A S
+-- --- - - - - - 
 CREATE TABLE Empleado(
 idEmpleado int ,
 Usuario varchar(50) not null,
@@ -57,7 +59,7 @@ CREATE TABLE ServicioDeEntrega(
 CREATE TABLE Proveedor(
 	IdProveedor int not null auto_increment,
 	nombreEmpresa varchar(50) not null,
-	nombreDelContrato varchar(50) not null,
+	nombreDelContacto varchar(50) not null,
 	telefonoContacto varchar(8) not null,
 	correo varchar(30) not null,
 	descripcion varchar(50) not null,
@@ -130,13 +132,4 @@ CREATE TABLE inventario(
     primary Key(idInventario)
 )ENGINE = InnoDB;
 
-CREATE TABLE Envio
-(
-	idEnvio INT NOT NULL auto_increment,
-    idCliente INT,
-    Direccion NVARCHAR(50),
-    Telefono INT,
-    idServicioDeEntrega INT,
-    PRIMARY KEY (idEnvio)
-)ENGINE = InnoDB;
 
