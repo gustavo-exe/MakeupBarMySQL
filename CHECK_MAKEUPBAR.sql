@@ -1,5 +1,18 @@
 
 use MakeupBar;
+
+-- - - - - - - 
+-- Checks
+-- - - - - - -
+
+ALTER TABLE empleado
+	add constraint CHK_Empleado_rol
+    check( rol = "Administrador" or rol = "Gerente");
+
+alter table inventario
+	add constraint CHK_Inventario_costoTotal
+    check(costoTotal > 0 );
+    
 ##################     TABLA DETALLE DE FACTURA   ##########
 -- Constraint para que la descripcion  no quede en blanco
 alter table detallefactura add constraint espacio_vacio 
