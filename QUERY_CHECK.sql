@@ -1,4 +1,4 @@
-use makeupbar;
+USE makeuppruebas;
 
 -- - - - - - - 
 -- Checks
@@ -21,7 +21,6 @@ ADD CONSTRAINT CK_URL_noVacío CHECK (LENGTH(TRIM(URL)) > 0)
 
 /* Restricciones para que los campos no esten vaciós en la tabla Compra */
 ALTER TABLE compra
-ADD CONSTRAINT CK_IDProveedor_noVacío CHECK ((IDProveedor) > 0),
 ADD CONSTRAINT CK_NombreDelProducto_noVacío CHECK (LENGTH(TRIM(NombreDelProducto)) > 0),
 ADD CONSTRAINT CK_Cantidad_noVacío CHECK ((Cantidad) > 0),
 ADD CONSTRAINT CK_Costo_noVacío CHECK ((Costo) > 0),
@@ -35,7 +34,7 @@ ADD CONSTRAINT UQ_NombredelProducto UNIQUE (NombreDelProducto)
 
 /* Restricciones para que los campos no esten vaciós en la tabla Cliente */
 ALTER TABLE Cliente 
-ADD CONSTRAINT CK_Nombre_noVacío CHECK (LENGTH(TRIM(NombreDelProducto)) > 0),
+ADD CONSTRAINT CK_Nombre_noVacío CHECK (LENGTH(TRIM(Nombre)) > 0),
 ADD CONSTRAINT CK_Correo_noVacío CHECK (LENGTH(TRIM(Correo)) > 0),
 ADD CONSTRAINT CK_Telefono_noVacío CHECK (LENGTH(TRIM(Telefono)) > 0),
 ADD CONSTRAINT CK_PerfilInstagram_noVacío CHECK (LENGTH(TRIM(PerfilInstagram)) > 0),
