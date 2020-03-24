@@ -162,8 +162,6 @@ CREATE TABLE IF NOT EXISTS `makeuppruebas`.`inventario` (
   `costoTotal` FLOAT NULL DEFAULT NULL,
   `idProveedor` INT NULL DEFAULT NULL,
   PRIMARY KEY (`idInventario`),
-  INDEX `IdProveedorFK_idx` (`idProveedor` ASC) VISIBLE,
-  INDEX `IdCodigodeBarraProductoGeneralFK_idx` (`idCodigoDeBarra` ASC) VISIBLE,
   CONSTRAINT `FK_IdProveedor(tbProveedor)`
     FOREIGN KEY (`idProveedor`)
     REFERENCES `makeuppruebas`.`proveedor` (`IdProveedor`)
