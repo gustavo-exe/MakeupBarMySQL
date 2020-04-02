@@ -1,4 +1,5 @@
-USE MAKEUPBAR;
+use makeupbar;
+
 -- --- - - - - - 
 -- T A B L A S
 -- --- - - - - - 
@@ -60,7 +61,7 @@ CREATE TABLE Proveedor(
 	IdProveedor int not null auto_increment,
 	nombreEmpresa varchar(50) not null,
 	nombreDelContacto varchar(50) not null,
-	telefonoContacto varchar(8) not null,
+	telefonoContacto varchar(9) not null,
 	correo varchar(30) not null,
 	descripcion varchar(50) not null,
 	primary key (IdProveedor)

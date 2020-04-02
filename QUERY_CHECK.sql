@@ -1,4 +1,4 @@
-use makeupbar;
+USE makeuppruebas;
 
 -- - - - - - - 
 -- Checks
@@ -20,11 +20,19 @@ ALTER TABLE instagram
 
 /* Restricciones para que los campos no esten vaciós en la tabla Compra */
 ALTER TABLE compra
+<<<<<<< HEAD
 	ADD CONSTRAINT CK_IDProveedor_noVacío CHECK ((IDProveedor) > 0),
 	ADD CONSTRAINT CK_NombreDelProducto_noVacío CHECK (LENGTH(TRIM(NombreDelProducto)) > 0),
 	ADD CONSTRAINT CK_Cantidad_noVacío CHECK ((Cantidad) > 0),
 	ADD CONSTRAINT CK_Costo_noVacío CHECK ((Costo) > 0),
 	ADD CONSTRAINT CK_Descripcion_noVacío CHECK (LENGTH(TRIM(Descripcion)) > 0);
+=======
+ADD CONSTRAINT CK_NombreDelProducto_noVacío CHECK (LENGTH(TRIM(NombreDelProducto)) > 0),
+ADD CONSTRAINT CK_Cantidad_noVacío CHECK ((Cantidad) > 0),
+ADD CONSTRAINT CK_Costo_noVacío CHECK ((Costo) > 0),
+ADD CONSTRAINT CK_Descripcion_noVacío CHECK (LENGTH(TRIM(Descripcion)) > 0)
+;
+>>>>>>> d67fca1cefc9358d77dc848962f62b5178eedf51
 
 /* Restricción unique para que el nombre del producto sea único */
 ALTER TABLE compra
@@ -32,6 +40,7 @@ ALTER TABLE compra
 
 /* Restricciones para que los campos no esten vaciós en la tabla Cliente */
 ALTER TABLE Cliente 
+<<<<<<< HEAD
 	ADD CONSTRAINT CK_Nombre_noVacío CHECK (LENGTH(TRIM(NombreDelProducto)) > 0),
 	ADD CONSTRAINT CK_Correo_noVacío CHECK (LENGTH(TRIM(Correo)) > 0),
 	ADD CONSTRAINT CK_Telefono_noVacío CHECK (LENGTH(TRIM(Telefono)) > 0),
@@ -41,3 +50,28 @@ ALTER TABLE Cliente
 	ADD CONSTRAINT CK_TonoDeBase_noVacío CHECK (LENGTH(TRIM(TonoDeBase)) > 0),
 	ADD CONSTRAINT CK_TonoDePolvo_noVacío CHECK (LENGTH(TRIM(TonoDePolvo)) > 0),
 	ADD CONSTRAINT CK_TipoDeCuties_noVacío CHECK (LENGTH(TRIM(TipoDeCuties)) > 0);
+=======
+ADD CONSTRAINT CK_Nombre_noVacío CHECK (LENGTH(TRIM(Nombre)) > 0),
+ADD CONSTRAINT CK_Correo_noVacío CHECK (LENGTH(TRIM(Correo)) > 0),
+ADD CONSTRAINT CK_Telefono_noVacío CHECK (LENGTH(TRIM(Telefono)) > 0),
+ADD CONSTRAINT CK_PerfilInstagram_noVacío CHECK (LENGTH(TRIM(PerfilInstagram)) > 0),
+ADD CONSTRAINT CK_Cumpleaños_noVacío CHECK (LENGTH(TRIM(Cumpleaños)) > 0),
+ADD CONSTRAINT CK_Ciudad_noVacío CHECK (LENGTH(TRIM(Ciudad)) > 0),
+ADD CONSTRAINT CK_TonoDeBase_noVacío CHECK (LENGTH(TRIM(TonoDeBase)) > 0),
+ADD CONSTRAINT CK_TonoDePolvo_noVacío CHECK (LENGTH(TRIM(TonoDePolvo)) > 0),
+ADD CONSTRAINT CK_TipoDeCuties_noVacío CHECK (LENGTH(TRIM(TipoDeCuties)) > 0)
+;
+/* Máscara para validar el número de telefono */
+ALTER TABLE Cliente ADD CONSTRAINT CK_validar_Formato_telefono
+CHECK (Telefono LIKE '[8-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]' 
+OR  Telefono LIKE '[3-3][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]' 
+OR Telefono LIKE '[2-2][7-7][0-9][0-9]-[0-9][0-9][0-9][0-9]')
+;
+
+/* Máscara para validar el correo*/
+ALTER TABLE Cliente ADD CONSTRAINT CK_validar_Formato_correo
+CHECK (Correo LIKE '%@%')
+;
+
+	
+>>>>>>> d67fca1cefc9358d77dc848962f62b5178eedf51
