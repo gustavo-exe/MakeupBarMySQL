@@ -134,7 +134,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `makeupbar`.`factura`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `makeupbar`.`factura` (
+CREATE TABLE IF NOT EXISTS `makeupbar`.`Factura` (
   `IdFactura` INT NOT NULL AUTO_INCREMENT,
   `FechaActual` DATETIME NOT NULL,
   `IdEmpleado` VARCHAR(15) NOT NULL,
