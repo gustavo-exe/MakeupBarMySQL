@@ -136,7 +136,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `makeupbar`.`Factura` (
   `IdFactura` INT NOT NULL AUTO_INCREMENT,
-  `FechaActual` DATETIME NOT NULL,
+  `FechaActual` DATETIME NULL DEFAULT CURRENT_TIMESTAMP(),
   `IdEmpleado` VARCHAR(15) NOT NULL,
   `idCliente` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`IdFactura`),
@@ -242,7 +242,7 @@ CREATE TABLE IF NOT EXISTS `makeupbar`.`Venta` (
   `idVenta` INT NOT NULL AUTO_INCREMENT,
   `idCliente` VARCHAR(15) NULL,
   `idEmpleado` VARCHAR(15) NULL,
-  `Fecha` DATETIME NULL,
+  `Fecha` DATETIME NULL DEFAULT CURRENT_TIMESTAMP(),
   INDEX `idVenta` USING BTREE (`idVenta`) VISIBLE,
   PRIMARY KEY (`idVenta`),
   UNIQUE INDEX `idVenta_UNIQUE` (`idVenta` ASC) VISIBLE,
