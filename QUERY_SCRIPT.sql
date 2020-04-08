@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `makeupbar`.`empleado` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
-
+INSERT INTO empleado (idEmpleado, Usuario, Contraseña, Rol) VALUE ('9999-9999-9999','admin','admin','Administrador');
 
 -- -----------------------------------------------------
 -- Table `makeupbar`.`serviciodeentrega`
