@@ -161,7 +161,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `makeupbar`.`instagram`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `makeupbar`.`instagram` (
-  `IdInstagram` INT NOT NULL,
+  `IdInstagram` INT NOT NULL AUTO_INCREMENT,
   `IdCliente` VARCHAR(15) NOT NULL,
   `Usuario` VARCHAR(50) NULL DEFAULT NULL,
   `URL` VARCHAR(100) NULL DEFAULT NULL,
