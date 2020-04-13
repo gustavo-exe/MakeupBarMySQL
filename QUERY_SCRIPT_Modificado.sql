@@ -35,6 +35,10 @@ CREATE TABLE IF NOT EXISTS `makeupbar`.`cliente` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+INSERT INTO `makeupbar`.`cliente`(`IdCliente`,`Nombre`,`Correo`,`Telefono`,`PerfilInstagram`,`Cumpleaños`,`Ciudad`,
+									`TonoDeBase`,`TonoDePolvo`,`TipoDeCuties`)
+VALUES('0000-0000-0000','Default','default@corre.com','0000-0000','makeupbarhn','2016/12/12','Siguatepeque',
+		'TonoDeBase','TonoDePolvo','Cuties');
 
 
 -- -----------------------------------------------------
@@ -87,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `makeupbar`.`empleado` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
-
+INSERT INTO empleado (idEmpleado, Usuario, Contraseña, Rol) VALUE ('9999-9999-9999','admin','admin','Administrador');
 
 -- -----------------------------------------------------
 -- Table `makeupbar`.`serviciodeentrega`
