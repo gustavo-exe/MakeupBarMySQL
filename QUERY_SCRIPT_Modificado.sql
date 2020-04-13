@@ -337,7 +337,17 @@ insert into Producto(CodigoDeBarra, NombreDelProducto, Precio, Cantidad)
 values (new.idCodigoDeBarra, NombreDelProducto, new.PrecioUnitario, new.Cantidad);
 END$$
 
+USE `makeupbar`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `makeupbar`.`cliente_AFTER_INSERT` AFTER INSERT ON `cliente` FOR EACH ROW
+BEGIN
 
+insert into instagram(IdCliente, Usuario, URL)
+VALUES (new.IdCliente, new.PerfilInstagram, concat('www.instagram.com/', new.PerfilInstagram));
+
+END$$
+
+
+DELIMITER ;
 DELIMITER ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
