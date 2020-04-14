@@ -41,7 +41,7 @@ ALTER TABLE cliente
 ADD CONSTRAINT CK_validar_Formato_correo CHECK (Correo LIKE '%@%');
 
 /* Restricción unique para que el id del cliente sea único */
-ALTER TABLE compra
+ALTER TABLE cliente
 ADD CONSTRAINT UQ_IdClienteUnico UNIQUE (IdCliente);
 
 	
