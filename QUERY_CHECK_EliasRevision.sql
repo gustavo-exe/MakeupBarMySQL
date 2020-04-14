@@ -44,4 +44,32 @@ ADD CONSTRAINT CK_validar_Formato_correo CHECK (Correo LIKE '%@%');
 ALTER TABLE cliente
 ADD CONSTRAINT UQ_IdClienteUnico UNIQUE (IdCliente);
 
+
+/* Restricciones para la tabla en la tabla Detalle De Venta */
+ALTER TABLE DetalleDeVenta
+ADD CONSTRAINT CK_Precio_detalle CHECK ((precio) > 0),
+ADD CONSTRAINT CK_Cantidad_detalle CHECK ((Cantidad) > 0),
+ADD CONSTRAINT CK_Total_noVacío CHECK ((Total) > 0);
+
+/* Restricciones para la tabla en la tabla Producto */
+ALTER TABLE Producto
+ADD CONSTRAINT CK_Precio_producto CHECK ((Precio) > 0),
+ADD CONSTRAINT CK_Cantidad_producto CHECK ((Cantidad) > 0);
+
+/* Restricciones para la tabla en la tabla Productogeneral */
+ALTER TABLE productogeneral
+ADD CONSTRAINT CK_Precio_general CHECK ((PrecioUnitario) > 0),
+ADD CONSTRAINT CK_Cantidad_general CHECK ((Cantidad) > 0);
+
+
+/* Restricciones para la tabla en la tabla Producto */
+ALTER TABLE maquillaje
+ADD CONSTRAINT CK_Precio_maquillaje CHECK ((PrecioUnitario) > 0),
+ADD CONSTRAINT CK_Cantidad_maquillaje CHECK ((Cantidad) > 0);
+
+/* Restricciones para la tabla en la tabla inventario */
+ALTER TABLE inventario
+ADD CONSTRAINT CK_Precio_inventario CHECK ((precio) > 0),
+ADD CONSTRAINT CK_Cantidad_inventario CHECK ((Cantidad) > 0);
+
 	
