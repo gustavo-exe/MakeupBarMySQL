@@ -325,7 +325,7 @@ USE `makeupbar`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `makeupbar`.`maquillaje_AFTER_INSERT_	Producto` AFTER INSERT ON `maquillaje` FOR EACH ROW
 BEGIN
 insert into Producto(CodigoDeBarra, NombreDelProducto, Precio, Cantidad)
-values (new.idCodigoDeBarra, NombreDelProducto, new.PrecioUnitario, new.Cantidad);
+values (new.idCodigoDeBarra, new.NombreDelProducto, new.PrecioUnitario, new.Cantidad);
 END$$
 
 USE `makeupbar`$$
@@ -339,7 +339,7 @@ USE `makeupbar`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `makeupbar`.`productogeneral_AFTER_INSERT_Producto` AFTER INSERT ON `productogeneral` FOR EACH ROW
 BEGIN
 insert into Producto(CodigoDeBarra, NombreDelProducto, Precio, Cantidad)
-values (new.idCodigoDeBarra, NombreDelProducto, new.PrecioUnitario, new.Cantidad);
+values (new.idCodigoDeBarra, new.NombreDelProducto, new.PrecioUnitario, new.Cantidad);
 END$$
 
 USE `makeupbar`$$
@@ -349,6 +349,13 @@ BEGIN
 insert into instagram(IdCliente, Usuario, URL)
 VALUES (new.IdCliente, new.PerfilInstagram, concat('www.instagram.com/', new.PerfilInstagram));
 
+END$$
+
+USE `makeupbar`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `makeupbar`.`cliente_AFTER_DELETE` AFTER DELETE ON `cliente` FOR EACH ROW
+BEGIN
+DELETE FROM instagram
+     WHERE instagram.IdCliente= old.IdCliente;
 END$$
 
 
