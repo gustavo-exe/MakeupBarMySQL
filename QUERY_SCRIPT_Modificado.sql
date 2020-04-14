@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `makeupbar`.`compra` (
   `IDProveedor` INT NOT NULL,
   `NombreDelProducto` VARCHAR(50) NOT NULL,
   `Cantidad` INT NOT NULL,
-  `Costo` FLOAT NOT NULL,
+  `Costo` Double NOT NULL,
   `Descripcion` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`IdCompra`),
   INDEX `IDProveedorFK_idx` (`IDProveedor` ASC) VISIBLE,
