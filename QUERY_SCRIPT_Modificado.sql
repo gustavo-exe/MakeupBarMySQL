@@ -271,7 +271,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `makeupbar`.`Producto` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
   `CodigoDeBarra` INT NULL,
-  `NombreDelProducto` VARCHAR(30) NULL,
+  `NombreDelProducto` VARCHAR(50) NULL,
   `Precio` FLOAT NULL,
   `Cantidad` INT NULL,
   PRIMARY KEY (`idProducto`))
@@ -339,7 +339,7 @@ USE `makeupbar`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `makeupbar`.`productogeneral_AFTER_INSERT_Producto` AFTER INSERT ON `productogeneral` FOR EACH ROW
 BEGIN
 insert into Producto(CodigoDeBarra, NombreDelProducto, Precio, Cantidad)
-values (new.idCodigoDeBarra, new.NombreDelProducto, new.PrecioUnitario, new.Cantidad);
+values (new.idCodigoDeBarra, new.NombreProducto, new.PrecioUnitario, new.Cantidad);
 END$$
 
 USE `makeupbar`$$
