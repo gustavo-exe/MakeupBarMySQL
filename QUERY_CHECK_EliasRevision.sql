@@ -40,4 +40,8 @@ ADD CONSTRAINT CK_TipoDeCuties_noVacío CHECK (LENGTH(TRIM(TipoDeCuties)) > 0);
 ALTER TABLE cliente 
 ADD CONSTRAINT CK_validar_Formato_correo CHECK (Correo LIKE '%@%');
 
+/* Restricción unique para que el id del cliente sea único */
+ALTER TABLE compra
+ADD CONSTRAINT UQ_IdClienteUnico UNIQUE (IdCliente);
+
 	
